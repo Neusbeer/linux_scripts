@@ -12,5 +12,6 @@ echo "$DOMAIN"
 echo "$URL_PATH"
 mkdir -p "$DOMAIN"/"$URL_PATH"
 cd "$DOMAIN/$URL_PATH"
-wget --no-check-certificate --recursive --no-parent --force-html --level=10 --cut-dirs=$PATH_LENGTH "$1" --no-host-directories
+OPTIONS="--no-check-certificate --recursive --no-parent --force-html --level=10 --no-host-directories --cut-dirs=$PATH_LENGTH"
+wget $OPTIONS "$1"
 echo "files saved to : $DOMAIN/$URL_PATH | url path length $PATH_LENGTH"
